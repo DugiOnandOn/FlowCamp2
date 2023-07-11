@@ -1,12 +1,25 @@
 import { View, Text, TouchableOpacity, Image} from 'react-native'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import Axios from 'axios'
 
-const searchData = [{id:0, images:[ require('../../images/place/image3.jpeg'), require('../../images/place/images4.jpeg'),
-require('../../images/place/images5.jpeg'),require('../../images/place/images6.jpeg'),require('../../images/place/images7.jpeg'),require('../../images/place/image3.jpeg'), require('../../images/place/images4.jpeg'),
-require('../../images/place/images5.jpeg'),require('../../images/place/images6.jpeg'),require('../../images/place/images7.jpeg')
-]}]
 
 const SearchContent = () => {
+
+  const [searchData, setSearchData] = useState([]);
+  const place = "캐나다";
+
+  useEffect(() => {
+    const fetchSearch = async () => {
+      try {
+        const response = await Axios.get(`http://172.10.5.152:80/travelpost/search/${place}`);
+      setSearchData(response.data);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    };
+
+    fetchSearch();
+  }, []);
 
   return (
     <View style={{backgroundColor: 'white'}}>

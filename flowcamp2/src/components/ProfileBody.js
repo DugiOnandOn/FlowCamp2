@@ -17,7 +17,7 @@ const ProfileBody = ({
             }}>
             <View style={{ alignItems: 'center'}}>
                 <Image
-                    source={profileImage}
+                    source={{uri:profileImage}}
                     style={{width: 170, height: 170, borderRadius:60
                     }}
                 />

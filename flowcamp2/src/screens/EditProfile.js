@@ -1,11 +1,26 @@
 import { View, Text, SafeAreaView, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { TouchableOpacity } from 'react-native'
 import { TextInput } from 'react-native'
+import Axios from 'axios'
 
 
 const EditProfile = ({route, navigation}) => {
-  const {name, profileImage} = route.params
+  const { name: initialName, profileImage: initialProfileImage } = route.params
+  const [name, setName] = useState(initialName)
+  const [profileImage, setProfileImage] = useState(initialProfileImage)
+
+  const handleSave = async () => {
+    try {
+      // PUT 요청 보내기
+      await Axios.put('/user', { username: name, image: profileImage })
+      // 요청이 성공하면 이전 화면으로 돌아가기
+      navigation.goBack()
+    } catch (error) {
+      console.error('Error updating profile:', error)
+    }
+  }
+
   return (
     <SafeAreaView
       style={{width:'100%', backgroundColor: 'white'}}
@@ -18,9 +33,7 @@ const EditProfile = ({route, navigation}) => {
           <Text>취소</Text>
         </TouchableOpacity>
         <Text style={{fontSize: 16, fontWeight: 'bold'}}>프로필 수정</Text>
-        <TouchableOpacity onPress={()=>{
-          navigation.goBack();
-        }}>
+        <TouchableOpacity onPress={handleSave}>
           <Text style={{color: '#3493D9'}}>완료</Text>
         </TouchableOpacity>
       </View>

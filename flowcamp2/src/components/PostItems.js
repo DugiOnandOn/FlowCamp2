@@ -2,12 +2,30 @@
 // PostItems.js
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
+import Axios from 'axios';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native';
 
 const PostItems = ({ data }) => {
-  const [like, setLike] = useState(data.isLiked);
+  const [like, setLike] = useState(data.isliked);
   const navigation = useNavigation();
+
+  const handleLike = async () => {
+    try {
+      const response = await Axios.post('172.10.5.152:80/travelpost/iflike', {
+        idtravelpost: data.idtravelpost,
+        liked: like,
+      },
+      {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+      });
+      setLike(!like);
+    } catch (error) {
+      console.error('Error sending like status:', error);
+    }
+  };
 
   return (
     <View
@@ -86,7 +104,7 @@ const PostItems = ({ data }) => {
             alignItems: 'center',
           }}
         >
-          <TouchableOpacity onPress={() => setLike(!like)}>
+          <TouchableOpacity onPress={() => handleLike()}>
             <AntDesign
               name={like ? 'heart' : 'hearto'}
               style={{
