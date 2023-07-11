@@ -1,0 +1,14 @@
+import { View, Text } from 'react-native'
+import React from 'react'
+
+
+const FreindProfile = () => {
+
+  return (
+    <View>
+      <Text>FriendProfile</Text>
+    </View>
+  )
+}
+
+export default FreindProfile
