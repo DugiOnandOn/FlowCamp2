@@ -9,8 +9,7 @@ const Log2 = ({ navigation }) => {
   const onSignIn = async () => {
     if (userId == '' || password == '') {
       Alert.alert('경고', '다시 입력해주세요');
-    } 
-    else {
+    } else {
       try {
         console.log(userId);
         Axios.post('http://172.10.5.152:80/login', {
@@ -22,6 +21,7 @@ const Log2 = ({ navigation }) => {
               'Content-Type': 'application/x-www-form-urlencoded'
             }
           }).then(response => {
+            console.log(response.status);
             if (response.status === 200) {
               // 로그인 성공 처리
               navigation.push('MyTab');

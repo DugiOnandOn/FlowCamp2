@@ -1,10 +1,11 @@
 import Home from './Home';
 import Search from './Search';
 import Profile from './Profile';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
-import Ionic from 'react-native-vector-icons/Ionicons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionic from 'react-native-vector-icons/Ionicons'
 
 const Tab = createBottomTabNavigator(); 
+
 const MyTab=() =>{
     return(
         <Tab.Navigator
