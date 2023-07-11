@@ -18,15 +18,16 @@ const ProfileBody = ({
             <View style={{ alignItems: 'center'}}>
                 <Image
                     source={profileImage}
-                    style={{width: 170, height: 170, borderRadius:60
+                    style={{width: 150, height: 150, borderRadius:60,
                     }}
                 />
 
                 <Text style={{
-                    paddingVertical: 5, 
+                    paddingVertical: 20, 
                     fontWeight: 'bold',
                     fontSize: 20,
-                    color: '#224455'
+                    color: '#224455',
+                    paddingBottom:10
                 }}>
                     {name}
                 </Text>
