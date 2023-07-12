@@ -10,7 +10,7 @@ const ListItems = ({data}) => {
             <View style={{alignItems:'center',borderColor:'#113344',borderWidth:2, borderRadius: 100, width:30, height:30,}}>
                     <MaterialCommunityIcons name="wallet-travel" style={{fontSize:23, color:'black'}}/>
             </View>
-            <TouchableOpacity onPress={()=>navigation.push('')}>
+            <TouchableOpacity onPress={()=>navigation.push('Detail')}>
                 <View style={{flexBasis:'column',}}>
                     <Text style={{paddingLeft:15, color:'#113344', fontWeight:'bold'}}>
                         {data.place} 여행

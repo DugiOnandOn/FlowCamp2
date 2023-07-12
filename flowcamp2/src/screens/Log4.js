@@ -1,9 +1,10 @@
 import React from 'react';
 import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
+import  * as KakaoLogin from '@react-native-seoul/kakao-login';
 
 const Log4=({navigation})=>{
-
+  
   return (
     <SafeAreaView>
         <View style={{flexDirection: 'row', alignItems: 'center', padding: 10,
@@ -20,12 +21,31 @@ const Log4=({navigation})=>{
             </TouchableOpacity>
         </View>
         <View>
-          <Text>
-            안녕하세요
-          </Text>
+          <View>
+            
+          </View>
         </View>
     </SafeAreaView>
   );
 }
+const login = () => {
+  KakaoLogin.login().then((result) => {
+      console.log("Login Success", JSON.stringify(result));
+      getProfile();
+  }).catch((error) => {
+      if (error.code === 'E_CANCELLED_OPERATION') {
+          console.log("Login Cancel", error.message);
+      } else {
+          console.log(`Login Fail(code:${error.code})`, error.message);
+      }
+  });
+};
 
+const getProfile = () => {
+  KakaoLogin.getProfile().then((result) => {
+      console.log("GetProfile Success", JSON.stringify(result));
+  }).catch((error) => {
+      console.log(`GetProfile Fail(code:${error.code})`, error.message);
+  });
+};
 export default Log4;
