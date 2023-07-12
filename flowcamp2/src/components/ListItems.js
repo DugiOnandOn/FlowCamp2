@@ -5,7 +5,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 const ListItems = ({data}) => {
     const navigation =useNavigation();
-    //console.log(data);
+    console.log(data);
     return(
         <View style={{flexDirection:'row', alignItems:'center', paddingBottom: 15, paddingHorizontal:15}}>
             <View style={{alignItems:'center',borderColor:'#113344',borderWidth:2, borderRadius: 100, width:30, height:30,}}>

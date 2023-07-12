@@ -9,6 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 const PostItems = ({ data }) => {
   const [like, setLike] = useState(data.isliked);
   const navigation = useNavigation();
+  console.log(data);
 
   const handleLike = async () => {
     try {
@@ -76,8 +77,7 @@ const PostItems = ({ data }) => {
           </View>
         </View>
         <TouchableOpacity
-            onPress={() => navigation.push('Status', data
-            )}
+            onPress={() => navigation.push('Status', data)}
           >
             <AntDesign name="cloudo" style={{ fontSize: 30 }} />
           </TouchableOpacity>

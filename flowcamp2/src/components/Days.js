@@ -4,19 +4,20 @@ import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import {View, Text, TouchableOpacity} from "react-native"
 
-const Days = ({data})=>{
+const Days = ({data, id})=>{
     const detInfo = data;
     console.log(detInfo);
     const navigation = useNavigation();
     return(
         <View style={{position:'relative', flexDirection:'column', backgroundColor:'white', paddingTop:'5%'}}>
             {detInfo.daySpotMap.map((data, index)=> {
+                let dayId = data.day
                 return(
                     <View style={{position:'relative', flexDirection:'column',padding:'3%',}}>
                         <View style={{position:'relative', flexDirection:'column', borderColor: 'gray',
                     borderWidth: 1,borderRadius:14}}>
                         <Text style={{fontSize:20, paddingLeft:'5%', paddingBottom:'5%', color:'#533799', fontWeight:'bold', paddingTop:'3%'}}>
-                            day {data.day}
+                            day {dayId}
                         </Text>
                         <View>
                             {data.spot.map((data, index)=>{
@@ -34,7 +35,7 @@ const Days = ({data})=>{
                                 )
                             })}
                         </View>
-                            <TouchableOpacity onPress={()=>navigation.push('SelectPlace')}>
+                            <TouchableOpacity onPress={()=>navigation.push("SelectPlace", {dayId, id})}>
                                 <View style={{paddingLeft:'6%', paddingBottom:'3%'}}>
                                     <View style={{flexDirection:'row',borderColor:'black', borderWidth:2, width: '22%',borderRadius:14, backgroundColor:'#113344'}}>
                                         <Text style={{color: 'white', paddingBottom:'5%', paddingLeft:'10%', fontWeight:'bold'}}>
