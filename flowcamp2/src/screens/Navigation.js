@@ -19,6 +19,8 @@ import Status from './Status';
 import Adding from './Adding';
 import EditProfile from './EditProfile';
 import ListItems from '../components/ListItems';
+import Days from '../components/Days';
+import SelectPlace from '../components/SelectPlace';
 
 
 const Stack = createNativeStackNavigator();
@@ -41,6 +43,8 @@ const Navigation = () =>{
           <Stack.Screen name="Period" component={Period}/>
           <Stack.Screen name="ListItems" component={ListItems}/>
           <Stack.Screen name="Detail" component={Detail}/>
+          <Stack.Screen name="Days" component={Days}/>
+          <Stack.Screen name="SelectPlace" component={SelectPlace}/>
         </Stack.Navigator>
       </NavigationContainer>
       );

@@ -34,7 +34,7 @@ const Days = ({data})=>{
                                 )
                             })}
                         </View>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.push('SelectPlace')}>
                                 <View style={{paddingLeft:'6%', paddingBottom:'3%'}}>
                                     <View style={{flexDirection:'row',borderColor:'black', borderWidth:2, width: '22%',borderRadius:14, backgroundColor:'#113344'}}>
                                         <Text style={{color: 'white', paddingBottom:'5%', paddingLeft:'10%', fontWeight:'bold'}}>

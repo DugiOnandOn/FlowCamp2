@@ -1,5 +1,5 @@
 // Status.js
-import { View, Text, StatusBar, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StatusBar, Image, TouchableOpacity, ScrollView } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -100,6 +100,34 @@ const Status = ({ route, navigation}) => {
       <Text style={{fontSize:16, color: 'black', padding: 25, paddingVertical: 26, lineHeight: 26}}>
          {NextInfo.text}
       </Text>
+      </View>
+      <View>
+        <ScrollView>
+        <View style={{position:'relative', flexDirection:'column',padding:'3%',}}>
+                        <View style={{position:'relative', flexDirection:'column', borderColor: 'gray',
+                    borderWidth: 1,borderRadius:14}}>
+                        <Text style={{fontSize:20, paddingLeft:'5%', paddingBottom:'5%', color:'#533799', fontWeight:'bold', paddingTop:'3%'}}>
+                            day {data.day}
+                        </Text>
+                        <View>
+                            {data.spot.map((data, index)=>{
+                                return(
+                                    <View style={{flexDirection:'row', alignContents:'center', paddingBottom: '5%', paddingHorizontal:'5%'}}>
+                                    <View style={{alignItems:'center',borderColor:'#113344',borderWidth:2, borderRadius: 100, width:25, height:25,}}>
+                                        <Text style={{color:'#533799', fontWeight:'bold'}}>{index+1}</Text>
+                                    </View>
+                                    <View>
+                                    <Text style={{paddingLeft:'4%', color:'#113344', fontWeight:'bold'}}>
+                                        {data}
+                                    </Text>
+                                    </View>
+                                </View>
+                                )
+                            })}
+                        </View>
+                    </View>
+                  </View>
+        </ScrollView>
       </View>
       
     </SafeAreaView>
