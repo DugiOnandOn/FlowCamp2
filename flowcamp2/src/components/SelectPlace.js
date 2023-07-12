@@ -1,9 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import Axios from 'axios'
 import { View, Text, TouchableOpacity, TextInput } from 'react-native'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
-const SelectPlace = ({navigation})=>{
+const SelectPlace = ({route, navigation})=>{
+    console.log(route.params);
     const [place, setPlace] = useState('');
+
+    const handleSpot = async () => {
+        try {
+          Axios.post('http://172.10.5.152:80/travelplan', {
+            idtravelplan: route.params.id,
+            day: route.params.dayId,
+            spot: place,
+          },
+          {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          }).then(response => {
+            navigation.goBack();
+          }).catch(error => console.log(error));
+          } catch (error) {
+            console.error(error);
+          }
+        };
+
     return(
         <View style={{position: 'relative'}}>
             <View style={{position:'relative',flexDirection: 'row', alignItems: 'center', padding: '3%',
@@ -35,12 +57,12 @@ const SelectPlace = ({navigation})=>{
                         padding: 4,
                         paddingLeft: 35,
                         }}
-                    onChangeText={text => setPassword(text)}
+                    onChangeText={text => setPlace(text)}
                     value={place}/>
                 </View>
             </View>
             <View style={{ paddingTop: 20, paddingLeft: 130, paddingRight: 150, paddingBottom: 300, backgroundColor: 'white' }}>
-                <TouchableOpacity onPress={onSignIn}>
+                <TouchableOpacity onPress={ handleSpot }>
                 <View style={{ padding: 5, borderColor: '#113344', borderWidth: 2, backgroundColor: '#113344' }}>
                     <Text style={{ color: 'white', paddingLeft: 28, paddingBottom: 5 }}>
                         입력

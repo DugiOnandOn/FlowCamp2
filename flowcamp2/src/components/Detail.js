@@ -57,7 +57,7 @@ const Detail=({route, navigation})=>{
         </View>
         <View>
             <ScrollView>
-                <Days data={detailInfo}/>
+                <Days data={detailInfo} id={idtravelplan}/>
             </ScrollView>
         </View>
         </View>
