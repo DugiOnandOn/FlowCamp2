@@ -35,6 +35,7 @@
 ---
 
 |![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/8aae2e83-2b9d-4d21-ba48-73b7b83da1b6)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/8efb341d-58d6-4b34-b6c1-ee79faab9fb8)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/83d6ec98-5203-41b6-a23d-30f161084bd4)|
+| ------ | ------ | ------ |
 
 
 ### TAB 1 - 다른 사용자의 여행기 포스팅
@@ -42,6 +43,7 @@
 ---
 
 |![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/3a49f3c0-25ec-47d3-8fc9-1d1f1fe8af66)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/ae970a37-add3-42e5-ba34-9c11f4e7912f)|
+| ------ | ------ |
 
 
 다른 사용자자들의 여행기와 여행 일정을 볼 수 있습니다.
@@ -88,6 +90,7 @@
 ---
 
 |![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/e56fcbc9-aafa-499e-a9ab-e224d1d5cb5c)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/fe45936e-1b56-49be-a418-207610ec0f6a)|
+| ------ | ------ |
 
 내 여행 일정을 계획하고 기록할 수 있는 창입니다.
 
