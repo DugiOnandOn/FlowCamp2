@@ -16,7 +16,10 @@
 
 ## C. 어플리케이션 소개
 
-### 로그인 기능
+### 첫 화면 - 로그인 기능
+
+|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/8aae2e83-2b9d-4d21-ba48-73b7b83da1b6)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/8efb341d-58d6-4b34-b6c1-ee79faab9fb8)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/83d6ec98-5203-41b6-a23d-30f161084bd4)|
+| ------ | ------ | ------ |
 
 -카카오톡 로그인 활성화
 -일반 로그인 및 회원 가입 시 별칭 설정
@@ -28,14 +31,8 @@
 
 - DB에 저장되어 있는 가입 정보와 사용자의 입력 값을 비교합니다.
 
-# ReadMe
-
-### FIRST - 첫 화면
 
 ---
-
-|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/8aae2e83-2b9d-4d21-ba48-73b7b83da1b6)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/8efb341d-58d6-4b34-b6c1-ee79faab9fb8)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/83d6ec98-5203-41b6-a23d-30f161084bd4)|
-| ------ | ------ | ------ |
 
 
 ### TAB 1 - 다른 사용자의 여행기 포스팅
