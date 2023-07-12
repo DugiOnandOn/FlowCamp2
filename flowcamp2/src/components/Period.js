@@ -8,7 +8,7 @@ import { color } from "native-base/lib/typescript/theme/styled-system";
 const Period =({data, navigation})=>{
     const styles = StyleSheet.create({
         calendar: {
-            borderBottomWidth: 1,
+            borderBottomWidth: 3,
             borderBottomColor: '#e0e0e0',
           }
     });
@@ -41,22 +41,22 @@ const Period =({data, navigation})=>{
     return(
         <SafeAreaView>
         
-        <View style={{flexDirection: 'row', alignItems: 'center', padding: 10,
-            paddingBottom: 10,
+        <View style={{position:'relative',flexDirection: 'row', alignItems: 'center', padding: '1%',
+            paddingBottom: '3%',
             backgroundColor: 'white',
             borderBottomColor: 'gray',
-            borderBottomWidth: 0.2,}}>
+            borderBottomWidth: 0.8}}>
             <TouchableOpacity
                 onPress={()=>{
                 navigation.goBack();
             }}>
-                <AntDesign name="arrowleft" style={{ color:'black', fontSize: 25, paddingTop:5, }} /> 
+                <AntDesign name="arrowleft" style={{ color:'black', fontSize: 25, paddingTop:'2%', }} /> 
             </TouchableOpacity>
-            <Text style={{paddingLeft:141, color:'#224455',fontSize:18,}}>
+            <Text style={{paddingLeft:'38%', color:'#224455',fontSize:18,}}>
                 일정
             </Text>
         </View>
-        <Text style={{flexDirection:'row', padding:20, backgroundColor:'white', color:'#335566', fontWeight:'300'}}>
+        <Text style={{flexDirection:'row', padding:'15%', backgroundColor:'white', color:'#335566', fontWeight:'300', paddingLeft:'20%', paddingBottom:'10%'}}>
             여행의 시작 날짜와 끝 날짜를 정하세요!
         </Text>
         <Calendar style={styles.calendar}
@@ -77,9 +77,9 @@ const Period =({data, navigation})=>{
             posts[0].date = checkDate;
         }
       }}/>
-      <Text style={{backgroundColor: 'white',height:"100%"}}>
-        {posts[1].date}
-      </Text>
+        <View style={{backgroundColor:'white', height:'40%'}}>
+
+        </View>
         </SafeAreaView>
     );
 };

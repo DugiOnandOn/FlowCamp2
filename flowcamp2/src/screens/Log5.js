@@ -31,7 +31,7 @@ return (
         </TouchableOpacity>
       </View>
       <View style={{position:'relative',paddingTop:'3%', paddingLeft: '26%', paddingRight:'25%', paddingBottom:'5%'}}>
-        <TouchableOpacity onPress={()=>login()}>
+        <TouchableOpacity onPress={()=>navigation.push('Log4')}>
           <View style={{
                   borderColor:'#335566',borderWidth:2,
                   borderRadius:70,

@@ -1,9 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
-import { Center } from "native-base";
 import React from "react";
 import {View, Text, TouchableOpacity} from "react-native"
 
 const Days = ()=>{
+    const navigation = useNavigation();
     const detInfo = {place: '서울',
         start_date:'2023-07-01',
         end_date:'2023-07-04',
@@ -55,7 +55,7 @@ const Days = ()=>{
                                 )
                             })}
                         </View>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={()=>navigation.push('SelectPlace')}>
                                 <View style={{paddingLeft:'6%', paddingBottom:'3%'}}>
                                     <View style={{flexDirection:'row',borderColor:'black', borderWidth:2, width: '22%',borderRadius:14, backgroundColor:'#113344'}}>
                                         <Text style={{color: 'white', paddingBottom:'5%', paddingLeft:'10%', fontWeight:'bold'}}>
