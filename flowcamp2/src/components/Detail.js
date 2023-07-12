@@ -1,30 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from 'react'
+import Axios from 'axios'
 import {View, Text, TouchableOpacity, ScrollView} from "react-native"
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Days from "./Days";
 
-const Detail=({navigation})=>{
-    const detailInfo = {place: '서울',
-        start_date:'2023-07-01',
-        end_date:'2023-07-04',
-        Dayspotmap:[{
-            day: 1,
-            spot: ['성북동','삼청동', '종로', '광화문']
-        },
-        {
-            day: 2,
-            spot: ['문래동','인사동', '경북궁', '창덕궁']
-        },
-        {
-            day: 3,
-            spot: ['도곡동','대치동', '서초동']
-        },
-        {
-            day: 4,
-            spot: ['둔산동','궁동', '어은동']
-        },
-        ]
-    }
+const Detail=({route, navigation})=>{
+    console.log(route.params);
+    const idtravelplan = route.params.idtravelplan;
+    console.log(idtravelplan);
+
+    const [detailInfo, setDetailInfo] = useState({
+        place: '',
+        start_date: '',
+        end_date:'',
+        daySpotMap: [],
+      });
+    
+      useEffect(() => {
+        // GET 요청을 보내어 데이터를 가져옴
+        fetchUserData = async () => {
+          try {
+            const response = await Axios.get(`http://172.10.5.152:80/travelplan/${idtravelplan}`);
+            const data = response.data;
+            console.log(data);
+            // 필요한 데이터를 추출하여 user 상태를 업데이트
+            const { place, start_date, end_date, daySpotMap } = data;
+            setDetailInfo({ place, start_date, end_date, daySpotMap,});
+          } catch (error) {
+            console.error('Error fetching user data:', error);
+          }
+        };
+    
+        fetchUserData();
+      }, []);
     return(
         <View>
         <View style={{flexDirection: 'row', alignItems: 'center', padding: 10,
@@ -49,7 +57,7 @@ const Detail=({navigation})=>{
         </View>
         <View>
             <ScrollView>
-                <Days/>
+                <Days data={detailInfo}/>
             </ScrollView>
         </View>
         </View>

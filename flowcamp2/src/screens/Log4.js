@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, SafeAreaView, TouchableOpacity} from 'react-native';
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import  * as KakaoLogin from '@react-native-seoul/kakao-login';
 
 const Log4=({navigation})=>{
   

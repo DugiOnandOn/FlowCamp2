@@ -1,8 +1,43 @@
 import { View, Text, SafeAreaView, TouchableOpacity, TextInput } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
+import Axios from 'axios'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 
 const Log3 = ({navigation}) => {
+
+  const [userId, setUserId] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+
+  const onSignUp = async () => {
+    console.log(userId, password, username);
+    if (userId == '' || password == '' || username =='') {
+      Alert.alert('경고', '다시 입력해주세요');
+    } else {
+      try {
+        Axios.post('http://172.10.5.152:80/signup', {
+          iduser: userId,
+          password: password,
+          username: username,
+        },
+          {
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }
+          }).then(response => {
+            if (response.status === 200) {
+              navigation.push('Log2');
+            } else if (response.status === 500) {
+              // 서버 오류 처리
+              Alert.alert('서버 오류', '서버에 문제가 발생했습니다');
+            }
+          })
+          .catch(error => console.log(error));
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  };
 
   return (
       <SafeAreaView>
@@ -35,7 +70,8 @@ const Log3 = ({navigation}) => {
                   fontSize: 15,
                   padding: 4,
                   paddingLeft: 30,
-            }}/>
+            }}
+            onChangeText={text => setUserId(text)}/>
               </View>
             <View style={{paddingTop: 50}}>
               <View style={{paddingLeft:80}}>
@@ -54,7 +90,8 @@ const Log3 = ({navigation}) => {
                   fontSize: 15,
                   padding: 4,
                   paddingLeft: 35,
-            }}/>
+            }}
+            onChangeText={text => setPassword(text)}/>
               </View>
           </View>
         </View>
@@ -75,11 +112,12 @@ const Log3 = ({navigation}) => {
                   fontSize: 15,
                   padding: 4,
                   paddingLeft: 47,
-            }}/>
+            }}
+            onChangeText={text => setUsername(text)}/>
               </View>
         </View>
         <View style={{paddingTop:70,paddingLeft:130,paddingRight:150,paddingBottom:300, backgroundColor: 'white'}}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={ onSignUp }>
               <View style={{ padding:5,borderColor: '#113344', borderWidth:2, backgroundColor:'#113344'}}>
                 <Text style={{color:'white', paddingLeft:24, paddingBottom:5}}>
                   회원가입

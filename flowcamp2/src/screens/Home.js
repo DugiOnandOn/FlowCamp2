@@ -19,7 +19,7 @@ const Home = ({navigation}) => {
           }}>
         <View>
           <Text style={{fontSize: 25, color: '#224455',fontWeight:'500', }}>
-            untitled
+            Triplan
           </Text>
         </View>
         <View style={{

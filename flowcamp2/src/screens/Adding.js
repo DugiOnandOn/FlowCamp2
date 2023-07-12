@@ -115,6 +115,18 @@ const Adding = ({navigation}) => {
             </View>
         </TouchableOpacity>
         </View>
+        <View style={{paddingVertical: 1, paddingHorizontal:10, paddingBottom:6}}>
+            <TouchableOpacity onPress={handleSave}
+        style={{width: '100%',}}>
+            <View
+                style={{width: '100%', height: 40, borderColor: '#DEDEDE', borderWidth: 1, borderRadius: 5, justifyContent:'center', alignItems:'center', flexDirection:'row'}}>
+                <AntDesign name="pluscircleo" style={{ fontSize: 15, paddingTop:5, paddingHorizontal:5 }} />   
+                <Text style ={{fontWeight: 'bold',fontSize: 14, letterSpacing:1, opacity:0.8,}}>
+                    새로운 여행!
+                </Text>
+            </View>
+        </TouchableOpacity>
+        </View>
     </View>
   )
 }
