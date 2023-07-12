@@ -12,7 +12,7 @@
 - OS: Android 13 Tiramisu (Sdk: 33)
 - Language: React Native-Cli, MySQL, Node.js
 - IDE: VScode
-- Target Device: Galaxy S10
+- Target Device: Galaxy S10e
 
 ## C. 어플리케이션 소개
 
