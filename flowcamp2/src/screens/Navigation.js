@@ -22,6 +22,7 @@ import ListItems from '../components/ListItems';
 import Days from '../components/Days';
 import SelectPlace from '../components/SelectPlace';
 import TravelList from '../components/TravelList';
+import SearchInput from '../components/SearchInput';
 
 
 const Stack = createNativeStackNavigator();
@@ -35,6 +36,7 @@ const Navigation = () =>{
           <Stack.Screen name ="Log4" component={Log4}/>
           <Stack.Screen name ="MyTab" component={MyTab}/>
           <Stack.Screen name = "Profile" component={Profile}/>
+          <Stack.Screen name = "SearchInput" component={SearchInput}/>
           <Stack.Screen name ="Adding" component={Adding}/>
           <Stack.Screen name ="PostItems" component={PostItems}/>
           <Stack.Screen name="Status" component={Status} />

@@ -112,10 +112,10 @@ const Status = ({ route, navigation}) => {
     </View>
     
   </View>
-  <View style={{position:'relative', paddingTop:"10%"}}>
+  <View style={{position:'relative', paddingTop:"15%"}}>
   <ScrollView>
     <View style={{ flex: 1 }}>
-      <View style={{flex: 0.6, marginTop: 55}}>
+      <View style={{flex: 0.6}}>
         <Image
           source={{uri:NextInfo.postImage}}
           style={{ width: '100%', height: '100%'}}

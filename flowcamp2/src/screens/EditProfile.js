@@ -86,7 +86,7 @@ const EditProfile = ({route, navigation}) => {
       </View>
       <View style={{padding:10}}>
         <View style={{paddingVertical: 10}}>
-          <Text style={{opacity:0.5}}>이름</Text>
+          <Text style={{opacity:0.5, paddingLeft:'1.3%'}}>이름</Text>
           <TextInput
             placeholder='이름'
             defaultValue={name}

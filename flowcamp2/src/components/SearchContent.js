@@ -1,25 +1,12 @@
 import { View, Text, TouchableOpacity, Image} from 'react-native'
-import React, { useState, useEffect } from 'react'
-import Axios from 'axios'
+import React from 'react'
 
+const searchData = [{id:0, images:[ require('../../images/place/image3.jpeg'), require('../../images/place/images4.jpeg'),
+require('../../images/place/images5.jpeg'),require('../../images/place/images6.jpeg'),require('../../images/place/images7.jpeg'),require('../../images/place/image3.jpeg'), require('../../images/place/images4.jpeg'),
+require('../../images/place/images5.jpeg'),require('../../images/place/images6.jpeg'),require('../../images/place/images7.jpeg')
+]}]
 
 const SearchContent = () => {
-
-  const [searchData, setSearchData] = useState([]);
-  const place = "캐나다";
-
-  useEffect(() => {
-    const fetchSearch = async () => {
-      try {
-        const response = await Axios.get(`http://172.10.5.152:80/travelpost/search/${place}`);
-      setSearchData(response.data);
-      } catch (error) {
-        console.error('Error fetching posts:', error);
-      }
-    };
-
-    fetchSearch();
-  }, []);
 
   return (
     <View style={{backgroundColor: 'white'}}>
@@ -34,7 +21,7 @@ const SearchContent = () => {
                         <TouchableOpacity key = {imageIndex}
                           style={{paddingStart:2, paddingEnd:2,paddingBottom: 2, width: '50%',}}>
                           <Image
-                            source={{uri: imageData}}
+                            source={imageData}
                             style={{width: '100%', height: 150}}
                           />
                         </TouchableOpacity>
