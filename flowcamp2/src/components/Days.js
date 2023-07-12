@@ -7,7 +7,7 @@ import {View, Text, TouchableOpacity} from "react-native"
 const Days = ({data})=>{
     const detInfo = data;
     console.log(detInfo);
-
+    const navigation = useNavigation();
     return(
         <View style={{position:'relative', flexDirection:'column', backgroundColor:'white', paddingTop:'5%'}}>
             {detInfo.daySpotMap.map((data, index)=> {

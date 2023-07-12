@@ -19,11 +19,11 @@ const SelectPlace = ({navigation})=>{
             </View>
             <View>
                 <View>
-                    <Text style={{ fontSize: 18, color: '#113344', fontWeight: 'bold', paddingBottom: 30 }}>
+                    <Text style={{ fontSize: 18, color: '#113344', fontWeight: 'bold', paddingLeft:'38%', backgroundColor:'white' }}>
                         장소 추가
                     </Text>
                 </View>
-                <View>
+                <View style={{paddingTop:'15%', paddingLeft:'10%', backgroundColor:'white', paddingRight:'5%',paddingBottom:'7%'}}>
                 <TextInput placeholder='원하는 장소를 저장하세요!' placeholderTextColor="#909090"
                     style={{
                         width: "89%",
@@ -33,16 +33,16 @@ const SelectPlace = ({navigation})=>{
                         justifyContent: 'center',
                         fontSize: 15,
                         padding: 4,
-                        paddingLeft: 35,
+                        paddingLeft: 70,
                         }}
                     onChangeText={text => setPassword(text)}
                     value={place}/>
                 </View>
             </View>
-            <View style={{ paddingTop: 20, paddingLeft: 130, paddingRight: 150, paddingBottom: 300, backgroundColor: 'white' }}>
-                <TouchableOpacity onPress={onSignIn}>
-                <View style={{ padding: 5, borderColor: '#113344', borderWidth: 2, backgroundColor: '#113344' }}>
-                    <Text style={{ color: 'white', paddingLeft: 28, paddingBottom: 5 }}>
+            <View style={{position:'relative', paddingTop: '7%', paddingLeft: '35%', paddingRight: '39%', paddingBottom: '150%', backgroundColor: 'white' }}>
+                <TouchableOpacity>
+                <View style={{ padding: '7%', borderColor: '#113344', borderWidth: 2, backgroundColor: '#113344' }}>
+                    <Text style={{ color: 'white', paddingLeft: '33%', paddingBottom: '5%' }}>
                         입력
                     </Text>
                 </View>

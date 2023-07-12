@@ -14,7 +14,7 @@ return (
     <View style={{flexDirection: 'column'}}>
       <View style={{position:'relative',paddingTop:'30%', paddingLeft:'28%'}}>
         <Text style={{fontSize: 30, paddingLeft:'15%', paddingBottom:'17%', fontWeight:'400', color: "#224455"}}>
-          Hello!
+          Triplan
         </Text>
         <Image source={image} style={{width:180, height:180,}}/>
       </View>
