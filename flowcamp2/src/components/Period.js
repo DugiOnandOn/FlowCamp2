@@ -41,7 +41,7 @@ const Period =({data, navigation})=>{
     return(
         <SafeAreaView>
         
-        <View style={{flexDirection: 'row', alignItems: 'center', padding: 10,
+        <View style={{position: 'relative', flexDirection: 'row', alignItems: 'center', padding: 10,
             paddingBottom: 10,
             backgroundColor: 'white',
             borderBottomColor: 'gray',
@@ -52,7 +52,7 @@ const Period =({data, navigation})=>{
             }}>
                 <AntDesign name="arrowleft" style={{ color:'black', fontSize: 25, paddingTop:5, }} /> 
             </TouchableOpacity>
-            <Text style={{paddingLeft:141, color:'#224455',fontSize:18,}}>
+            <Text style={{paddingLeft:'10%', color:'#224455',fontSize:18,}}>
                 일정
             </Text>
         </View>

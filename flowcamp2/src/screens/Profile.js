@@ -1,10 +1,10 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import ProfileBody from '../components/ProfileBody'
 import ProfileButton from '../components/ProfileButton'
-import List from '../components/List'
+import ListItems from "../components/ListItems";
 
 const Profile = () => {
 
@@ -13,7 +13,6 @@ const Profile = () => {
     username: '',
     travelMap: [],
   });
-  console.log("user");
 
   useEffect(() => {
     console.log("실행");
@@ -48,11 +47,7 @@ const Profile = () => {
             profileImage={userInfo.userImage}
         />
       </View>
-<<<<<<< HEAD
       <ProfileButton name={userInfo.username} profileImage={userInfo.userImage}/>
-      
-=======
-      <ProfileButton name="Honggil" profileImage={require('../../images/place/image2.jpeg')}/>
       <View style={{backgroundColor:'white', paddingTop:20,paddingLeft:59, paddingBottom:20}}>
         <Text style={{fontSize:17,
                     fontWeight: 'bold',
@@ -62,12 +57,16 @@ const Profile = () => {
       </View>
       <View style={{height: 190}}>
         <ScrollView>
-            <List/>
-          </ScrollView>
+        <View>
+            {userInfo.travelMap.map((data, index)=> {
+                return(
+                    <ListItems key={index} data={data}/>
+                )
+            })}
+        </View>
+        </ScrollView>
       </View>
         
-  
->>>>>>> client
     </SafeAreaView>
   )
 }

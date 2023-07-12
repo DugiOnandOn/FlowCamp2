@@ -29,7 +29,7 @@ const Status = ({ route, navigation}) => {
     <SafeAreaView
       style={{
         backgroundColor: 'white',
-        height: '100%',
+        height: '110%',
         justifyContent: 'center',
       }}
     >

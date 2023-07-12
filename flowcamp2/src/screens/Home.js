@@ -28,7 +28,7 @@ const Home = ({navigation}) => {
           alignItems: 'center',
           paddingVertical: 5
         }}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigation.push("Adding")}>
             <FontAwesome name="plus-square-o" style={{fontSize: 27}}/>
           </TouchableOpacity>
         </View>

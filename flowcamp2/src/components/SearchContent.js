@@ -34,7 +34,7 @@ const SearchContent = () => {
                         <TouchableOpacity key = {imageIndex}
                           style={{paddingStart:2, paddingEnd:2,paddingBottom: 2, width: '50%',}}>
                           <Image
-                            source={imageData}
+                            source={{uri: imageData}}
                             style={{width: '100%', height: 150}}
                           />
                         </TouchableOpacity>

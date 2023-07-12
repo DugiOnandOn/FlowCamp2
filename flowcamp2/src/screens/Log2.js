@@ -11,7 +11,6 @@ const Log2 = ({ navigation }) => {
       Alert.alert('경고', '다시 입력해주세요');
     } else {
       try {
-        console.log(userId);
         Axios.post('http://172.10.5.152:80/login', {
           iduser: userId,
           password: password,

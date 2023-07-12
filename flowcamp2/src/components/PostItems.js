@@ -12,7 +12,7 @@ const PostItems = ({ data }) => {
 
   const handleLike = async () => {
     try {
-      const response = await Axios.post('172.10.5.152:80/travelpost/iflike', {
+      Axios.post('http://172.10.5.152:80/travelpost/iflike', {
         idtravelpost: data.idtravelpost,
         liked: like,
       },
@@ -20,12 +20,13 @@ const PostItems = ({ data }) => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded'
         }
-      });
-      setLike(!like);
-    } catch (error) {
-      console.error('Error sending like status:', error);
-    }
-  };
+      }).then(response => {
+        setLike(!like);
+      }).catch(error => console.log(error));
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
   return (
     <View

@@ -8,6 +8,7 @@ import Log3 from './Log3';
 import Log4 from './Log4';
 import Log5 from './Log5';
 import MyTab from './MyTab';
+import Profile from './Profile';
 
 import PostItems from '../components/PostItems';
 import Places from '../components/Places';
@@ -28,6 +29,7 @@ const Navigation = () =>{
           <Stack.Screen name ="Log3" component={Log3}/>
           <Stack.Screen name ="Log4" component={Log4}/>
           <Stack.Screen name ="MyTab" component={MyTab}/>
+          <Stack.Screen name = "Profile" component={Profile}/>
           <Stack.Screen name ="Adding" component={Adding}/>
           <Stack.Screen name ="PostItems" component={PostItems}/>
           <Stack.Screen name="Status" component={Status} />
