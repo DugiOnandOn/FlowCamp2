@@ -30,13 +30,21 @@
 
 # ReadMe
 
-### TAB 1 - 다른 유저의 여행기 포스팅
+### FIRST - 첫 화면
 
 ---
 
-**실행 화면**
+|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/8aae2e83-2b9d-4d21-ba48-73b7b83da1b6)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/8efb341d-58d6-4b34-b6c1-ee79faab9fb8)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/83d6ec98-5203-41b6-a23d-30f161084bd4)|
 
-다른 사용자의 여행기를 볼 수 있습니다.
+
+### TAB 1 - 다른 사용자의 여행기 포스팅
+
+---
+
+|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/3a49f3c0-25ec-47d3-8fc9-1d1f1fe8af66)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/ae970a37-add3-42e5-ba34-9c11f4e7912f)|
+
+
+다른 사용자자들의 여행기와 여행 일정을 볼 수 있습니다.
 
 
 **Major Features**
@@ -73,21 +81,16 @@
 
    **문자 보내기**
 
-   - 세부 정보 페이지에서 __우편__ 모양 버튼을 누르면 문자 보내기 창으로 이동됩니다.
+   - 세부 정보 페이지에서 __우편__ 모양 버튼을 누르면 문자 보내기 창저여행
 
-   **영상통화 걸기**
+### TAB 2 - 내 여행 기록
 
-   - 세부 정보 페이지에서 __캠코더__ 모양 버튼을 누르면 영상통화가 걸립니다.
+---
 
-**기술 설명**
+|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/e56fcbc9-aafa-499e-a9ab-e224d1d5cb5c)|![image](https://github.com/DugiOnandOn/FlowCamp2/assets/39901387/fe45936e-1b56-49be-a418-207610ec0f6a)|
 
-- __Recycler View__ 를 이용하여, 연락처 데이터들을 표현합니다.
-- 연락처 탭 코드가 다른 탭에 영향을 주는 것을 막기 위해 __모든 Logic이 Fragment 안__ 에 담기도록 구조를 디자인 하였습니다.
-  - Fragment Container만을 가지고 있는 Fragment를 하나 만들어서 탭 전환 시에는 Container를 가지고 있는 Fragment만을 띄웁니다.
-  - 실제 탭의 구현은 추가 Fragment들을 만들어 구현한 뒤, Container에 추가 Fragment를 넣어주는 형태로서 위의 목적을 달성하였습니다.
-- 이름, 전화번호를 직접 눌러서 수정 가능하도록 만들기 위해서 TextView와 EditText를 겹쳐놓고 수정할 때와 아닐 때에 따라 번갈아가며 visible을 바꿔줌으로서 구현하였습니다.
+내 여행 일정을 계획하고 기록할 수 있는 창입니다.
 
-### TAB 2 - 갤러리
 #### Major features
 * 갤러리 보기  
   ![Screen_Recording_20230705-155354_FlowCamp1_1](https://github.com/jihwan01/FlowCamp1/assets/39901387/35973a99-ffb6-41b4-bac6-ae2d9b49184c)
